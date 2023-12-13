@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"k8s.io/client-go/rest"
@@ -31,4 +32,14 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
+	newObj := lobby.DeepCopy()
+	newObj.Spec.Name = "test2"
+
+	fmt.Println(lobby.Spec.Name)
+	fmt.Println(lobby.Spec.Image)
+	fmt.Println(lobby.Spec.Domain)
+	fmt.Println(lobby.Spec.Replicas)
+
+	fmt.Println(newObj.Spec.Name)
 }

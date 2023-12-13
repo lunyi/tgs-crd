@@ -5,8 +5,10 @@ import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 // LobbySpec defines the desired state of Lobby
 type LobbySpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster
- 	Name string `json:"name"`
-	Replicas int32 `json:"replicas"`
+	Name     string `json:"name"`
+	Replicas int32  `json:"replicas"`
+	Image    string `json:"image"`
+	Domain   string `json:"domain"`
 }
 
 // LobbyStatus defines the observed state of Lobby.
